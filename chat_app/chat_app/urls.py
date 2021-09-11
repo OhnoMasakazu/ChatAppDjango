@@ -21,7 +21,4 @@ from django.urls import path,include
 urlpatterns = [
     path('', include('chat.urls')),
     path('admin/', admin.site.urls),
-    #path('', include('django.contrib.auth.urls')),
 ]
-
-#urlpatterns += static(settings.IMAGE_URL, document_root=settings.IMAGE_ROOT)
