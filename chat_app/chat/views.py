@@ -1,9 +1,7 @@
 from chat.forms import SignupForm
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from django.contrib.auth.views import LoginView, LogoutView
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.views.generic import TemplateView
+from .forms import User
 
 # Create your views here.
 def index(request):
@@ -20,6 +18,14 @@ def signup(request):
     return render(request,'chat/signup.html',{'form': form})
 
 def friend(request):
-    return render(request,'chat/friend.html')
+    data = User.objects.all()
+    params = {
+        'data': data,
+    }
+    return render(request,'chat/friend.html',params)
 
+def talk(request):
+    return render(request,'chat/talk.html')
 
+def setting(request):
+    return render(request,'chat/setting.html')

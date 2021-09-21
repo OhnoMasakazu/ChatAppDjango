@@ -1,6 +1,14 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ja">
-    <body>
+    {% block extrahead %}
+        <link href="{% static 'style.css' %}" rel="stylesheet">
+    {% endblock %}
+    <header>
+        <p>ログイン</p>
+        <hr>
+    </header>
+    <main>
         <form method="post" action="{% url 'login' %}">
             {% csrf_token %}
             <table>
@@ -15,5 +23,5 @@
             </table>
             <input type="submit" value="login">
         </from>
-    </body>
+    </main>
 </html>

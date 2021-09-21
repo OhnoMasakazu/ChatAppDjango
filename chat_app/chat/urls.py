@@ -6,4 +6,6 @@ urlpatterns = [
     path('signup',views.signup,name='signup'),
     path('friend',views.friend,name='friend'),
     path('login/',LoginView.as_view(template_name='chat/login.html'), name="login"),
+    path('talk_room',views.talk,name='talk'),
+    path('setting',views.setting,name='setting'),
 ]
