@@ -1,12 +1,17 @@
-header {
+header{
     position: fixed;
     width: 100%;
     top: 0;
     z-index: 999;
     background-color: white;
 }
-main {
+main{
     padding-top: 60px;
+}
+img{
+    border-radius: 50%;  /* 角丸半径を50%にする(=円形にする) */
+    width:  50px;       /* ※縦横を同値に */
+    height: 50px;       /* ※縦横を同値に */
 }
 
 nav{
@@ -32,4 +37,29 @@ nav ul li a{
 }
 nav ul li a:hover{
     color: #E7DA66;
+}
+
+/* トーク送信部分 */
+.talk_room__sendbox {
+    width: 100%;
+    min-height: 3rem;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: #eee;
+    font-size: 2rem;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-justify-content: space-around;
+    justify-content: space-around;
+}
+
+
+.talk_room__sendbox-btn {
+    font-size: 1rem;
+    margin: auto 8px;
+    width: 4rem;
+    border: solid 2px #131313;
+    background: none;
+    border-radius: 32px;
 }

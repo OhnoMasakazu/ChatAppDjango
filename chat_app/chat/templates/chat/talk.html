@@ -5,17 +5,25 @@
         <link href="{% static 'style.css' %}" rel="stylesheet">
     {% endblock %}
     <header>
-        <p>hiro</p>
+        <p>{{friendname}}</p>
         <hr>
     </header>
     <main>
-        <p>This is talk form.</p>
+        <table>
+            {% for item in talkdata %}
+            {% if item.sender == user.username and item.receiver == friendname or item.receiver == user.username and item.sender == friendname %}
+            <tr>
+                <td>>{{item.sender}}</td>
+                <td align="right">{{item.date.month}}/{{item.date.day}} {{item.date.hour}}:{{item.date.minute}}</td>
+            </tr>
+            <tr><td>{{item.text}}</td></tr>
+            {% endif %}
+            {% endfor %}
+        </table>
     </main>
-    <nav>
-        <hr>
-        <ul>
-            <li><a href=friend>友達</a></li>
-            <li><a href=setting>設定</a></li>
-        </ul>
-    </nav>
+    <form class="talk_room__sendbox" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <button class="talk_room__sendbox-btn" type="submit">送信</button>
+    </form>
 </html>

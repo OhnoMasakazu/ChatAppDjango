@@ -9,24 +9,15 @@
         <hr>
     </header>
     <main>
-        <p>This is friend form.</p>
         <table>
-            <tr>
-                <th>username</th>
-                <th>email</th>
-                <th>img</th>
-            </tr>
-            <tr>
-                <td>テスト</td>
-                <td>null@gmail.com</td>
-                <td><img src="media/img/default.jpg"/></td>
-            </tr>
             {% for item in data %}
+            {% if item.username != user.username %}
             <tr>
-                <td>{{item.username}}</td>
-                <td>{{item.email}}</td>
-                <td>{{item.img}}</td>
+                <td rowspan="2"><img src="media/img/default.jpg" /></td>
+                <td><a href="{% url 'talk' item.username %}">{{ item.username }}</a></td>
             </tr>
+            <tr><td>内容</td></tr>
+            {% endif %}
             {% endfor %}
         </table>
     </main>

@@ -9,7 +9,11 @@
         <hr>
     </header>
     <main>
-        <p>This is setting form.</p>
+        <p><a href="{% url 'username_change' %}"><input type="button" name="username_change" value="ユーザーネーム変更"></a></p>
+        <p><a href="{% url 'mail_change' %}"><input type="button" name="mail_change" value="メールアドレス変更"></a></p>
+        <p><a href="{% url 'icon_change' %}"><input type="button" name="icon_change" value="アイコン変更"></a></p>
+        <p><a href="{% url 'password_change' %}"><input type="button" name="password_change" value="パスワード変更"></a></p>
+        <p><a href="{% url 'logout' %}"><input type="button" name="logout" value="ログアウト"></a></p>
     </main>
     <nav>
         <hr>

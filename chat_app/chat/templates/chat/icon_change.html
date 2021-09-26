@@ -1,0 +1,25 @@
+{% load static %}
+<!doctype html>
+<html lang="ja">
+    {% block extrahead %}
+        <link href="{% static 'style.css' %}" rel="stylesheet">
+    {% endblock %}
+    <header>
+        <p>アイコン</p>
+        <hr>
+    </header>
+    <main>
+        <form action="{% url 'icon_change' %}" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit",value="送信">
+        </form>
+    </main>
+    <nav>
+        <hr>
+        <ul>
+            <li><a href=friend>友達</a></li>
+            <li><a href=setting>設定</a></li>
+        </ul>
+    </nav>
+</html>
